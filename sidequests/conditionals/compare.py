@@ -10,5 +10,7 @@ elif x > y:
     print("x is greater than y")
 elif x == y:
     print("x is equal to y")
-elif x != y:
+# elif x != y: logically this is not necessary because the expression is the last argument possible and therefore we dont need an elif.
+#     print("x is not equal to y")
+else:
     print("x is not equal to y")
