@@ -15,7 +15,6 @@ lives = 6
 
 # Import the logo from hangman_art.py and print it at the start of the game.
 
-
 print(logo)
 
 # Testing code
