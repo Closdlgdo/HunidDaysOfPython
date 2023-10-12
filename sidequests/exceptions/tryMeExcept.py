@@ -43,12 +43,51 @@
 # # print(f'x is {x}')
 # # NameError: name 'x' is not defined
 
-# python error handling also allows else.
+# # python error handling also allows else.
+#
+# try:
+#     x = int(input("Whats x? "))
+#
+# except ValueError:
+#     print('x is not a integer')
+# else:
+#     print(f'x is {x}')
 
-try:
-    x = int(input("Whats x? "))
+# # We will now use a loop to continue prompting the user for the correct input incase they don't input what we want.
+# while True:
+#     try:
+#         x = int(input("Whats x? "))
+#     except ValueError:
+#         print('x is not a integer')
+#     else:
+#         break
+#
+# print(f'x is {x}')
 
-except ValueError:
-    print('x is not a integer')
-else:
-    print(f'x is {x}')
+# If we want to get user input on the daily or often, we can create a function that can be used by others as well.
+# This code defines a function called main that does the following:
+#
+# Calls a function called get_int() which returns an integer value.
+# Stores the returned integer value in a variable called x.
+# Prints the value of x using f-string formatting.
+def main():
+    x = get_int()
+    print(f'x is: {x}')
+
+
+# This code defines a function called get_int() that repeatedly asks the user for input until they provide a valid integer.
+# It uses a while loop and a try-except block to handle any ValueError that may occur if the user enters a non-integer
+# value. Once a valid integer is provided, the function breaks out of the loop and returns the value.
+
+
+def get_int():
+    while True:
+        try:
+            x = int(input("Whats x? "))
+        except ValueError:
+            pass  # the pass statement is a placeholder that does nothing. It is used when a statement is syntactically required but you do not want to perform any action at that point in your code.
+        else:
+            return x  # breaks out of the loop
+
+
+main()
