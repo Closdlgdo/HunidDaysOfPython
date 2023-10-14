@@ -71,7 +71,7 @@
 # Stores the returned integer value in a variable called x.
 # Prints the value of x using f-string formatting.
 def main():
-    x = get_int()
+    x = get_int("What's x? ")
     print(f'x is: {x}')
 
 
@@ -80,14 +80,14 @@ def main():
 # value. Once a valid integer is provided, the function breaks out of the loop and returns the value.
 
 
-def get_int():
+def get_int(prompt):
     while True:
         try:
-            x = int(input("Whats x? "))
+            return int(input(prompt))
+            # return can break you out of a loop and return a value. Stronger and more useful thank Break.
         except ValueError:
-            pass  # the pass statement is a placeholder that does nothing. It is used when a statement is syntactically required but you do not want to perform any action at that point in your code.
-        else:
-            return x  # breaks out of the loop
+            pass  # the pass statement is a placeholder that does nothing. It is used when a statement is syntactically
+            # required but you do not want to perform any action at that point in your code.
 
 
 main()
