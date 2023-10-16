@@ -2,18 +2,27 @@
 # Write a Python program that:
 #
 # Takes two numbers as input from the user.
-x = int(input("Enter a number: "))
-y = int(input("Enter another number: "))
-# Calculates and prints their sum, difference, product, and quotient.
-summation = x + y
-difference = x - y
-product = x * y
-quotient = x / y
-
-print("Sum:", summation, "Difference:", difference, "Product:", product, "Quotient:", quotient)
+# x = int(input("Enter a number: "))
+# y = int(input("Enter another number: "))
+# # Calculates and prints their sum, difference, product, and quotient.
+# summation = x + y
+# difference = x - y
+# product = x * y
+# quotient = x / y
+#
+# print("Sum:", summation, "Difference:", difference, "Product:", product, "Quotient:", quotient)
 
 # Exercise 2: Factorial Calculator
-# Write a Python function that calculates the factorial of a given number. Test it by finding the factorial of 5.
+# Write a Python function that calculates the factorial of a given number.
+factorial = int(input("Enter a number: "))
+result = 1  # This variable will be used to keep track of the current factorial.
+for i in range(1,
+               factorial + 1):  # This line starts a loop that will iterate over a range of numbers from 1 to factorial + 1.
+    # i will take on each of these values in turn.
+    result *= i  # Inside the loop, this line multiplies result by the current value of i.
+    # This is the step where the factorial is being calculated.
+    print("Factorial: ", result)
+
 #
 #
 
