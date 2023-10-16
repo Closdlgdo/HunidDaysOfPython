@@ -46,13 +46,13 @@
 # the main code is at the top.
 def main():
     name = input("What is your name? ")
-    hello(name)
+    hello(name.title())
 
 
 # This code defines a function named hello that takes an optional argument to with a default value of "world".
 # It prints "hello" followed by the value of to.
 def hello(to="world"):
-    print("hello", to)
+    print(f"Hello {to}")
 
 
 main()  # you have to call main in order to execute the function. If you don't, you will get an error.
