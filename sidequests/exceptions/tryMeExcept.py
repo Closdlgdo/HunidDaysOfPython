@@ -84,20 +84,41 @@
 #     while True:
 #         try:
 #             return int(input(prompt))
-#             # return can break you out of a loop and return a value. Stronger and more useful thank Break.
+#             # return can break you out of a loop and return a value. Stronger and more useful than Break.
 #         except ValueError:
 #             pass  # the pass statement is a placeholder that does nothing. It is used when a statement is syntactically
 #             # required but you do not want to perform any action at that point in your code.
 #
 #
 # main()
-try:
-    numerator = int(input("Enter a number to divide: "))
-    denominator = int(input("Enter a number to divide by: "))
-    result = numerator / denominator
-    print(result)
-except ZeroDivisionError:  # it is not considered good practice to use a single Except block that would handle all exceptions.
-    # It is better practice to handle specific exceptions.
-    print("You can't divide by zero!")
-except ValueError:
-    print("Oops! That was not a valid number. Try again...")
+def main():
+    x = get_numerator("Enter a number to divide: ")
+    y = get_denominator("Enter a number to divide by: ")
+    result(x, y)
+
+
+def get_numerator(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            pass
+
+
+def get_denominator(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Oops! That was not a valid number. Try again...")
+
+
+def result(numerator, denominator):
+    try:
+        res = numerator / denominator
+        print(res)
+    except ZeroDivisionError:
+        print("You can't divide by zero!")
+
+
+main()
