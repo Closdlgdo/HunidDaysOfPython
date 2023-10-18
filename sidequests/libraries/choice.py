@@ -14,5 +14,11 @@
 # from keyword is used to import a function from a module.
 from random import choice
 
-coin = choice(["heads", "tails"])
-print(coin)
+color = choice(["red", "blue", "yellow"])
+print(color)
+
+name = choice(["carlos", "theano", "lucas"])
+print(name)
+
+pokemon = choice(["pikachu", "charmander", "squirtle", "bulbasaur"])
+print(pokemon)
