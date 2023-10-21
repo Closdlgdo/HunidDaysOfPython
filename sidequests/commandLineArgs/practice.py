@@ -16,3 +16,6 @@ else:
 # This is what I would input into the terminal to run the program:
 # python3 practice.py Carlos
 # It prints out "Hello, my name is Carlos"
+# If we want to type out our full name, we can wrap our name in quotes. This is called a string and seen as one argument.
+# python3 practice.py "Carlos Delgado"
+# It prints out "Hello, my name is Carlos Delgado"
