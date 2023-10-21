@@ -25,8 +25,15 @@ def caesar(start_text, shift_amount, cipher_direction):
     print(f"The {cipher_direction}d text is {end_text}")
 
 
+# We call the caesar() function with the text, the shift, and the direction as parameters.
+
+
 caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
 
+########################
+#
+#
+#
 # def encrypt(plain_text, shift_amount):
 #     cipher_text = ""
 #     for letter in plain_text:
