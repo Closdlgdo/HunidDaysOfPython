@@ -3,10 +3,6 @@ alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"
             "q", "r", "s", "t", "u",
             "v", "w", "x", "y", "z"]
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
 
 # We create a new function called caesar() that accepts three parameters: a string, a shift amount, and a direction.
 # The function should then apply the shift to each letter of the text, starting with the first letter and moving to the last letter
@@ -22,14 +18,27 @@ def caesar(start_text, shift_amount, cipher_direction):
             end_text += alphabet[new_position]
         else:
             end_text += char
-    print(f"The {cipher_direction}d text is {end_text}")
+    print(f"The {cipher_direction}d text is: {end_text}")
 
 
+should_end = False
+while not should_end:
+    print("Welcome to the Caesar Cipher Encoder/Decoder")
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
+
+    # What if the user enters a shift amount that is greater than the number of letters in the alphabet?
+    # In that case, the program should ask the user to try again.
+    shift = shift % 26
+    print(f"Your shift amount is: {shift}")
 # We call the caesar() function with the text, the shift, and the direction as parameters.
+    caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
 
-
-caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
-
+    restart = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
+    if restart == "no":
+        should_end = True
+        print("Thank you for using Caesar Cipher Encoder/Decoder. Goodbye")
 ########################
 #
 #
