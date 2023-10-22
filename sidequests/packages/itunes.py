@@ -10,7 +10,7 @@ if len(sys.argv) != 2:  # error checking; if len(sys.argv) is not equal to 2. we
     sys.exit("Too many arguments!")
 # request.get is a function inside the request package that allows us to make HTTP/s requests.
 # it gets stored in a variable called response.
-response = requests.get("https://itunes.apple.com/search?entity=song&limit=10&term=" + sys.argv[1])
+response = requests.get("https://itunes.apple.com/search?entity=song&limit=40&term=" + sys.argv[1])
 
 # We will store the json response in a variable called o.
 o = response.json()
