@@ -6,12 +6,17 @@ import sys
 
 # let's be a bit more defensive with the code and give a refined exception.
 if len(sys.argv) < 2:
-    print("Too few arguments!")
-elif len(sys.argv) > 2:
-    print("Too many arguments!")
-else:
-    print(f"Hello, my name is", sys.argv[1])
-# this way we don't have to give an exception, we can use the conditionals that could express that.
+    sys.exit("Too few arguments!")  # When sys.exit is called, the program is immediately terminated, and any further
+    # code that follows it will not be executed. It can be used to forcefully exit the program in specific situations
+    # or to handle exceptional cases where you want to stop the execution of the program.
+# to not limit how many arguments we can give to the program, we to iterate over every name at the prompt.
+for arg in sys.argv[1:]:
+    print(f"Hello, my name is", arg)
+# a slice is a way to extract a portion of a sequence, such as a string, list, or tuple. It allows you to select a range
+# of elements from the sequence based on their indices.
+#
+# The syntax for a slice is sequence[start:end:step], where start is the index of the starting element, end is the index
+# of the ending element (exclusive), and step is the interval between elements.
 
 # This is what I would input into the terminal to run the program:
 # python3 practice.py Carlos
