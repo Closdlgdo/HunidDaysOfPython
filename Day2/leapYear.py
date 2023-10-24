@@ -6,3 +6,9 @@ def is_leap_year(year):
         return True
 
     return False
+
+
+if is_leap_year(input_year):
+    print("Leap year.")
+else:
+    print("Not leap year.")
