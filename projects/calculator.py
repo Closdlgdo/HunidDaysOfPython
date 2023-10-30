@@ -40,6 +40,12 @@ for symbol in operations:  # when we use a for loop in the dictionary, it iterat
 
 operation_symbol = input("Pick an operation from the line above: ")
 num2 = int(input("What's the second number? "))
-answer = operations[operation_symbol](num1, num2)
+first_answer = operations[operation_symbol](num1, num2)
 
-print(f"{num1} {operation_symbol} {num2} = {answer}")
+print(f"{num1} {operation_symbol} {num2} = {first_answer}")
+
+operation_symbol = input("Pick an operation from the line above: ")
+num3 = int(input("What's the second number? "))
+second_answer = operations[operation_symbol](first_answer, num3)
+
+print(f"{first_answer} {operation_symbol} {num3} = {second_answer}")
