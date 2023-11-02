@@ -4,7 +4,7 @@ def main():
 
 
 def square(n):
-    return n + n
+    return n * n
 
 
 if __name__ == '__main__':  # Let's get into the habit of making sure main() is not always called. This is a good habit
