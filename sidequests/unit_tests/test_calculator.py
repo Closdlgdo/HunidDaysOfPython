@@ -2,15 +2,22 @@
 # # Pytest is a third party test framework for Python. It will automate the testing of your code as long as you write the code.
 # from calculator import square  # import square function from calculator.py file
 #
-#
+# We will reintroduce the error so we can run all the tests and see which will fail.
 from calculator import square
 
 
-def test_square():
+# We will separate our test code into multiple tests.
+def test_positive():
     assert square(2) == 4
     assert square(3) == 9
+
+
+def test_negative():
     assert square(-2) == 4
     assert square(-3) == 9
+
+
+def test_zero():
     assert square(0) == 0
 
 # def main():  # in order to call the function, the sole purpose of main is to test test_square.
