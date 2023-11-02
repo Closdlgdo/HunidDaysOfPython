@@ -14,23 +14,37 @@
 
 # Exercise 2: Factorial Calculator
 # Write a Python function that calculates the factorial of a given number.
-factorial = int(input("Enter a number: "))
-result = 1  # This variable will be used to keep track of the current factorial.
-for i in range(1,
-               factorial + 1):  # This line starts a loop that will iterate over a range of numbers from 1 to factorial + 1.
-    # i will take on each of these values in turn.
-    result *= i  # Inside the loop, this line multiplies result by the current value of i.
-    # This is the step where the factorial is being calculated.
-    print("Factorial: ", result)
-
+# factorial = int(input("Enter a number: "))
+# result = 1  # This variable will be used to keep track of the current factorial.
+# for i in range(1,
+#                factorial + 1):  # This line starts a loop that will iterate over a range of numbers from 1 to factorial + 1.
+#     # i will take on each of these values in turn.
+#     result *= i  # Inside the loop, this line multiplies result by the current value of i.
+#     # This is the step where the factorial is being calculated.
+#     print("Factorial: ", result)
 #
-#
+# #
+# #
 
 # Exercise 3: Guess the Number Game
 # Write a program that generates a random number between 1 and 100. The user should guess the number. Provide hints like
 # "Too high" or "Too low" until they guess correctly.
-#
-#
+
+import random
+
+desired_number = random.randint(1, 100)  # This generates a random number between 1 and 100.
+
+while True:
+    guess = int(input("Guess a number between 1 and 100: "))
+
+    if guess < desired_number:
+        print("Too low")
+    elif guess > desired_number:
+        print("Too high")
+    else:
+        print("You guessed it correctly!")
+        break
+
 
 # Exercise 4: Fibonacci Sequence
 # Write a Python function that generates the first n numbers in the Fibonacci sequence.
