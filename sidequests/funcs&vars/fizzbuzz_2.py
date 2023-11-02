@@ -8,4 +8,4 @@ def fizzbuzz(input):
     return input
 
 
-print(fizzbuzz(7))
+print(fizzbuzz(12312))
