@@ -3,6 +3,8 @@
 # from calculator import square  # import square function from calculator.py file
 #
 # We will reintroduce the error so we can run all the tests and see which will fail.
+import pytest
+
 from calculator import square
 
 
@@ -19,6 +21,11 @@ def test_negative():
 
 def test_zero():
     assert square(0) == 0
+
+
+def test_str():
+    with pytest.raises(TypeError):
+        square("2")
 
 # def main():  # in order to call the function, the sole purpose of main is to test test_square.
 #     test_square()
