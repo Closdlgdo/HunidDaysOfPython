@@ -3,8 +3,8 @@ def main():
     print(hello(name))  # This version is a lot more testable.
 
 
-def hello(name):  # it is best practice to not have side effects if they are avoidable.
-    return f"Hello {name}!"
+def hello(to="world"):  # it is best practice to not have side effects if they are avoidable.
+    return f"Hello {to}!"
 
 
 if __name__ == "__main__":
