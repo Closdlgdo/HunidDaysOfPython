@@ -30,16 +30,27 @@ strings = ["a", "b", "c", "d", "e", "f"]
 # We use list comprehension with functions too.
 
 
-def timesFour(num):
-    return num * 4
+# def timesFour(num):
+#     return num * 4
+#
+#
+# # result = []  # we create a new list called result.
+# # for i in nums:
+# #     i = timesFour(i)  # First, we use the function timesFour to change the value of i.
+# #     print('i: ', i)
+# #     result.append(i)  # Then, we append the result to our list.
+#
+# new_result = [timesFour(i) for i in nums]
+#
+# print(new_result)
 
+# Last example is we can use it with a dictionary.
+dicts = [{'a': 13302, 'b': 23042, 'c': 34039}]
+# we will grab the values of the dictionary and put them in a list.
+# results = []
+# for i in dicts:
+#     results.append(i['a'])
 
-# result = []  # we create a new list called result.
-# for i in nums:
-#     i = timesFour(i)  # First, we use the function timesFour to change the value of i.
-#     print('i: ', i)
-#     result.append(i)  # Then, we append the result to our list.
+results = [i['a'] for i in dicts]
 
-new_result = [timesFour(i) for i in nums]
-
-print(new_result)
+print(results)
