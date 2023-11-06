@@ -24,5 +24,22 @@ strings = ["a", "b", "c", "d", "e", "f"]
 #
 # # A key feature to list comprehensions is that they return lists.
 # # We can also add conditional statements to our list comprehensions.
-iterating = [i * 2 for i in [1, 2, 3, 4]]
-print(iterating)
+# iterating = [i * 2 for i in [1, 2, 3, 4]]
+# print(iterating)
+
+# We use list comprehension with functions too.
+
+
+def timesFour(num):
+    return num * 4
+
+
+# result = []  # we create a new list called result.
+# for i in nums:
+#     i = timesFour(i)  # First, we use the function timesFour to change the value of i.
+#     print('i: ', i)
+#     result.append(i)  # Then, we append the result to our list.
+
+new_result = [timesFour(i) for i in nums]
+
+print(new_result)
