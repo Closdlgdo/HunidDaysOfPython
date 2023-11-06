@@ -18,6 +18,11 @@ strings = ["a", "b", "c", "d", "e", "f"]
 # for i in strings:
 #     i = i.upper()  # Here we are iterating over our list and changing each element to uppercase.
 #     results.append(i)
-results = [i.upper() for i in strings]
-
-print(results)
+# results = [i.upper() for i in strings]
+#
+# print(results)
+#
+# # A key feature to list comprehensions is that they return lists.
+# # We can also add conditional statements to our list comprehensions.
+iterating = [i * 2 for i in [1, 2, 3, 4]]
+print(iterating)
