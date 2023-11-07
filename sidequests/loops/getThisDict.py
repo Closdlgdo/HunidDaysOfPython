@@ -23,6 +23,9 @@ students = {
 print(students["Draco"])
 
 # loop time. It will only iterate over the keys.
-for student in students:
-    print(student)  # It will only iterate over the keys.
-    print(student, students[student], sep=", ")  # It will call the full list.
+# for student in students:
+#     print(student)  # It will only iterate over the keys.
+#     print(student, students[student], sep=", ")  # It will call the full list.
+
+# This is the list comprehension version of the above code.
+[print(student, students[student], sep=", ") for student in students]
