@@ -38,7 +38,10 @@ students = [
 
 ]
 
-for student in students:  # allows us to iterate over the students in the list.
-    print(student["name"])
-    print(student["name"], student["house"], sep=", ")
-    print(student["name"], student["house"], student["patronus"], sep=", ")
+# for student in students:  # allows us to iterate over the students in the list.
+# print(student["name"])
+# print(student["name"], student["house"], sep=", ")
+# print(student["name"], student["house"], student["patronus"], sep=", ")
+
+# We can use a list comprehension as well to make our code more readable.
+[print(student["name"], student["house"], student["patronus"], sep=", ") for student in students]
