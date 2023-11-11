@@ -23,7 +23,11 @@
 
 names = input("Please enter your name: ")
 
-file = open("names.txt", "a")  # When we use the "a" function, we are appending (adding to the list) to the file instead
-# of writing over it.
-file.write(f"{names}\n")
-file.close()
+with open("names.txt",
+          "a") as file:  # When we use the "a" function, we are appending (adding to the list) to the file instead
+    # of writing over it.
+    file.write(f"{names}\n")  # we then indent this line into the with scope.
+# file.close(), to make it more pythonic, we can introduce the "with" statement.
+
+# with open("names.txt", "a") (Call the function in question) as file (specify the name of the variable that should be assigned
+# the return value of open)
