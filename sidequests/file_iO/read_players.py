@@ -16,6 +16,7 @@ def get_player(player):
 # ^^^^^^^^ This defines a function get_player that takes a player dictionary as an argument and returns the value associated
 # with the key "name". This function will be used as the key function for sorting the players.
 
-for player in sorted(player_s, key=get_player):  # This iterates through the sorted player_s list based on the "name"
+for player in sorted(player_s, key=get_player,
+                     reverse=True):  # This iterates through the sorted player_s list based on the "name"
     # key using the get_player function.
     print(f"{player['name']} plays for the {player['team']}.")
