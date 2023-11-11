@@ -8,12 +8,18 @@
 # #     print(line.rstrip())
 
 ################################################################
-# We want to print the names from names.txt in a sorted order. To do this, we can use the sorted() function.
-names = []  # we create an empty list
+# # We want to print the names from names.txt in a sorted order. To do this, we can use the sorted() function.
+# names = []  # we create an empty list
+#
+# with open("names.txt") as file:  # we do not need to specify 'r' for read.
+#     for line in file:
+#         names.append(line.rstrip())  # we append the names to the list
+#
+# for name in sorted(names):
+#     print(f"Hello, {name}!")
 
+################################################################
+# We can simplify the above code even more with the sorting of the names by doing:
 with open("names.txt") as file:  # we do not need to specify 'r' for read.
-    for line in file:
-        names.append(line.rstrip())  # we append the names to the list
-
-for name in sorted(names):
-    print(f"Hello, {name}!")
+    for line in sorted(file):
+        print(f"Hello, {line.rstrip()}!")
