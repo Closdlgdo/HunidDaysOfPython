@@ -5,7 +5,7 @@
 #
 # for name in sorted(names):
 #     print(f"Hello, {name}!")
-#
+#################################################################
 # # Every time we rerun the program, the names do not get saved. They will simply disappear and will
 # # be replaced with the new names. If a program required the names to be saved, then this would not work out.
 
@@ -16,6 +16,7 @@
 # # a new one.
 # file.write(names)
 # file.close()
+################################################################
 # # Instead of printing out the name that has just been inputted, we will save it to a file by using the open() function.
 # # Allows us to read from or write to a file.
 # # This certain code will not save all the names when the program is re-run over and over since there is no list to save in,

@@ -21,5 +21,5 @@
 ################################################################
 # We can simplify the above code even more with the sorting of the names by doing:
 with open("names.txt") as file:  # we do not need to specify 'r' for read.
-    for line in sorted(file):
+    for line in sorted(file, reverse=True):
         print(f"Hello, {line.rstrip()}!")
