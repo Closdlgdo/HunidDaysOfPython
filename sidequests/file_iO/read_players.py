@@ -1,12 +1,17 @@
+import csv  # There is also a csv module library for python
+
 player_s = []
 
 with open("players.csv") as file:
-    for line in file:
-        players, team = line.rstrip().split(",")  # This line splits each line of the file into two parts using the
-        # split(",") method.
-        player = {"name": players, "team": team}  # This creates a dictionary named player with keys "name" and "team"
-        # and assigns the values from the previous line.
-        player_s.append(player)
+    # for line in file:
+    #     players, team = line.rstrip().split(",")  # This line splits each line of the file into two parts using the
+    #     # split(",") method.
+    #     player = {"name": players, "team": team}  # This creates a dictionary named player with keys "name" and "team"
+    #     # and assigns the values from the previous line.
+    #     player_s.append(player)
+    reader = csv.reader(file)  # This creates a reader object that reads the file.
+    for name, team, number in reader:
+        player_s.append({"name": name, "team": team, "number": number})
 
 # def get_team(player):
 #     return player["team"]
@@ -28,4 +33,4 @@ with open("players.csv") as file:
 # lambda x: x["name"] is a lambda expression that takes an argument x and returns x["name"].
 
 for player in sorted(player_s, key=lambda player: player["team"]):
-    print(f"{player['name']} plays for the {player['team']}.")
+    print(f"{player['name']} plays for the {player['team']} wearing the number: {player['number']}.")
