@@ -11,7 +11,7 @@ with open("players.csv") as file:
     #     player_s.append(player)
     reader = csv.DictReader(file)  # This creates a reader object that reads the file.
     for row in reader:
-        player_s.append({"name": row["name"], "team": row["team"], "number": row["number"]})
+        player_s.append(row)
 
 # def get_team(player):
 #     return player["team"]
