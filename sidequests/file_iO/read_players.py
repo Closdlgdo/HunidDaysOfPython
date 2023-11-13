@@ -4,14 +4,14 @@ player_s = []
 
 with open("players.csv") as file:
     # for line in file:
-    #     players, team = line.rstrip().split(",")  # This line splits each line of the file into two parts using the
+    #     players, team = line.rstrip().split(",") # This line splits each line of the file into two parts using the
     #     # split(",") method.
-    #     player = {"name": players, "team": team}  # This creates a dictionary named player with keys "name" and "team"
+    #     player = {"name": players, "team": team} # This creates a dictionary named player with keys "name" and "team"
     #     # and assigns the values from the previous line.
     #     player_s.append(player)
-    reader = csv.reader(file)  # This creates a reader object that reads the file.
-    for name, team, number in reader:
-        player_s.append({"name": name, "team": team, "number": number})
+    reader = csv.DictReader(file)  # This creates a reader object that reads the file.
+    for row in reader:
+        player_s.append({"name": row["name"], "team": row["team"], "number": row["number"]})
 
 # def get_team(player):
 #     return player["team"]
@@ -20,7 +20,7 @@ with open("players.csv") as file:
 # # ^^^^^^^^ This defines a function get_player that takes a player dictionary as an argument and returns the value associated
 # # with the key "name". This function will be used as the key function for sorting the players.
 #
-# for player in sorted(player_s, key=get_team):  # This iterates through the sorted player_s list based on the "name"
+# for player in sorted(player_s, key=get_team): # This iterates through the sorted player_s list based on the "name"
 #     # key using the get_player function.
 #     print(f"{player['name']} plays for the {player['team']}.")
 
@@ -32,5 +32,5 @@ with open("players.csv") as file:
 # for a specific purpose. The syntax of a lambda expression is lambda arguments: expression. In the provided code,
 # lambda x: x["name"] is a lambda expression that takes an argument x and returns x["name"].
 
-for player in sorted(player_s, key=lambda player: player["team"]):
-    print(f"{player['name']} plays for the {player['team']} wearing the number: {player['number']}.")
+for player in sorted(player_s, key=lambda player: player["name"]):
+    print(f"{player['name']} plays/ed for the {player['team']} wearing the number: {player['number']}.")
