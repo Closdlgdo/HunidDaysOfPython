@@ -18,25 +18,28 @@ lambda x: x * x  # this function does not have a name.
 
 # This is how it looks without an argument
 
-def get_hundo():
-    return 10 * 10
+def get_total():
+    return 11111 * 10
 
 
-lambda: 10 * 10
+print(get_total())
+
+# In lambda it will be like this:
+print((lambda x, y: x * y)(11111, 10))
 
 ######################################################################################
 
 # This is how we would call a lambda function:
 
-(lambda x: x * x)(10)
+print((lambda x: x * x)(10))
 (lambda: 10 * 10)()
 
 
 ######################################################################################
-def add(x, y):
-    return x + y
+def add(x, y, z):
+    return x + y * z
 
 
-print(add(1, 2))
+print(add(1, 2, 5))
 
-print((lambda x, y: x + y)(1, 2))
+print((lambda x, y: x * y)(4, 7))
