@@ -10,6 +10,11 @@ print(squares)
 squares = [num ** 2 for num in range(5)]
 print(squares)
 
+# Another List Comprehension Example:
+names = ["Alex", "Beth", "Caroline", "Dave", "Eleanor", "Freddie", "Gloria", "Harry", "Ron", "Hermione", "Neville",
+         "Trevor"]
+short_names = [name for name in names if len(name) > 6]
+print(short_names)
 
 ##########################################################################
 
