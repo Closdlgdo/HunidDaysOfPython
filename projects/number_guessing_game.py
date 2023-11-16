@@ -37,7 +37,6 @@ def main():
 
     turns = difficulty()
 
-
     guess = 0
     while guess != number:
         print(f"You have {turns} chances to guess the number.")
