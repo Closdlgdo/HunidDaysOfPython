@@ -10,6 +10,10 @@ def clear():
     subprocess.call(command, shell=False)
 
 
+# This code defines a function named clear that clears the terminal screen. It checks the operating system using os.name
+# and sets the command variable accordingly. Then it uses subprocess.call to execute the command and clear the screen.
+
+
 def get_random_account():
     return random.choice(data)
 
