@@ -8,12 +8,12 @@
 # An attribute is a property of an object.
 from turtle import Turtle, Screen
 
-pedro = Turtle()
+pedro = Turtle()  # Created a new object
 print(pedro)
-pedro.shape("turtle")
-pedro.color("DarkSeaGreen4")
-pedro.forward(100)
+pedro.shape("turtle")  # calling a method
+pedro.color("DarkSeaGreen4")  # calling a method
+pedro.forward(100)  # calling a method
 
 my_screen = Screen()
-print(my_screen.canvheight)
-my_screen.exitonclick()
+print(my_screen.canvheight)  # Tapping into its attributes
+my_screen.exitonclick()  # calling a method
