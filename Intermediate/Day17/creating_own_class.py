@@ -20,12 +20,16 @@ user_1 = User("001", "Carlos")  # user_1 is an object of the User class
 # user_1.id = "001"  # this is an attribute of the user_1 object
 # user_1.username = "Carlos"  # this is an attribute of the user_1 object
 user_2 = User("002", "Theano")
+user_3 = User("003", "Lucas")  # this is an attribute of the
 
 user_1.follow(user_2)  # user_1(object) will follow(method) user_2
+user_1.follow(user_3)
 print(user_1.followers)
 print(user_1.following)
 print(user_2.followers)
 print(user_2.following)
+print(user_3.followers)
+print(user_3.following)
 
 # user_2 = User()
 # user_2.id = "002"
