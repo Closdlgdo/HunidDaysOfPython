@@ -1,17 +1,24 @@
 import random
-from turtle import Turtle, Screen
+import turtle as t
 
-t = Turtle()
-t.shape("turtle")
-t.pensize(7)
+pancho = t.Turtle()
+pancho.shape("turtle")
+t.colormode(255)
 
-colors = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
+
+
 directions = [0, 90, 180, 270]
+pancho.pensize(10)
+pancho.speed("fastest")
 
 for _ in range(200):
-    t.color(random.choice(colors))
-    t.forward(40)
-    t.setheading(random.choice(directions))
-
-screen = Screen()
-screen.exitonclick()
+    pancho.color(random_color())
+    pancho.forward(30)
+    pancho.setheading(random.choice(directions))
