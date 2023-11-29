@@ -72,15 +72,33 @@
 # ####################################################################################
 # ####################################################################################
 
+# import re
+#
+# email = input("Email: ").strip()
+#
+# if re.search(r".+@.+\.edu", email):  # the r at the beginning of the string means that the string is a raw string.
+#     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
+#     print("Valid email!")
+# else:
+#     print("Invalid email!")
+#
+# # This is also buggy because at input, it allows me to create a sentence that contains my email.
+# # Ex: Email: "my email is closdlgdo@gmail.edu.". This will call valid as long as there is something before and after the _@_.edu
+
+# ####################################################################################
+# ####################################################################################
 import re
 
 email = input("Email: ").strip()
 
-if re.search(r".+@.+\.edu", email):  # the r at the beginning of the string means that the string is a raw string.
+if re.search(r"^.+@.+\.edu$", email):  # the r at the beginning of the string means that the string is a raw string.
     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
     print("Valid email!")
 else:
     print("Invalid email!")
 
-# This is also buggy because at input, it allows me to create a sentence that contains my email.
-# Ex: Email: my email is closdlgdo@gmail.edu. This will call valid as long as there is something before and after the _@_.edu
+# "^" is a special character that means start of string. This is the first character that we are looking for.
+# "$" is a special character that means end of string. This is the last character that we are looking for.
+
+# This is also buggy because at input, it allows me to create a sentence that contains my email as long as we do not end
+# email without a period. Ex: "my email is cl@d.edu" is valid.
