@@ -28,10 +28,11 @@ import re
 
 email = input("Email: ").strip()
 
-if re.search("@", email):
+if re.search(".+@.+", email):
     print("Valid email!")
 else:
     print("Invalid email!")
 
 # This program is buggy because we set a very low bar. we only look for the @ so we can only input the @ and nothing else
-# and the code would still call it as valid.
+# and the code would still call it as valid. Now we are creating the code more valid but it is still buggy. Mainly because we can give a sketchy
+# email address like "hello@.edu" and the code will still call it valid.
