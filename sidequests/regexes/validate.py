@@ -55,6 +55,22 @@
 #
 # ####################################################################################
 # ####################################################################################
+#
+# import re
+#
+# email = input("Email: ").strip()
+#
+# if re.search(r".+@.+\.edu", email):  # the r at the beginning of the string means that the string is a raw string.
+#     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
+#     print("Valid email!")
+# else:
+#     print("Invalid email!")
+#
+# # This code is better but still buggy because we have not set a standard for the @.
+# # we can input many "@" characters and still call it valid. Ex: "hello@@@@@@.edu"
+
+# ####################################################################################
+# ####################################################################################
 
 import re
 
@@ -66,5 +82,5 @@ if re.search(r".+@.+\.edu", email):  # the r at the beginning of the string mean
 else:
     print("Invalid email!")
 
-# This code is better but still buggy because we have not set a standard for the @.
-# we can input many "@" characters and still call it valid. Ex: "hello@@@@@@.edu"
+# This is also buggy because at input, it allows me to create a sentence that contains my email.
+# Ex: Email: my email is closdlgdo@gmail.edu. This will call valid as long as there is something before and after the _@_.edu
