@@ -87,18 +87,37 @@
 
 # ####################################################################################
 # ####################################################################################
+# import re
+#
+# email = input("Email: ").strip()
+#
+# if re.search(r"^.+@.+\.edu$", email):  # the r at the beginning of the string means that the string is a raw string.
+#     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
+#     print("Valid email!")
+# else:
+#     print("Invalid email!")
+#
+# # "^" is a special character that means start of string. This is the first character that we are looking for.
+# # "$" is a special character that means end of string. This is the last character that we are looking for.
+#
+# # This is also buggy because at input, it allows me to create a sentence that contains my email as long as we do not end
+# # email without a period. Ex: "my email is cl@d.edu" is valid.
+
+# ####################################################################################
+# ####################################################################################
+
 import re
 
 email = input("Email: ").strip()
 
-if re.search(r"^.+@.+\.edu$", email):  # the r at the beginning of the string means that the string is a raw string.
+if re.search(r"^[^@]+@[^@]\.edu$",
+             email):  # the r at the beginning of the string means that the string is a raw string.
     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
     print("Valid email!")
 else:
     print("Invalid email!")
 
-# "^" is a special character that means start of string. This is the first character that we are looking for.
-# "$" is a special character that means end of string. This is the last character that we are looking for.
-
-# This is also buggy because at input, it allows me to create a sentence that contains my email as long as we do not end
-# email without a period. Ex: "my email is cl@d.edu" is valid.
+# "[]" is a special character that means match any character inside the brackets.
+# "[^]" is a special character that means match any character not inside the brackets.
+# This particular change to the code will not allow the user to input various @ symbols. However,
+# this code will still allow for a sentence before the actual email address.
