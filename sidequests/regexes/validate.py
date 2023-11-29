@@ -129,7 +129,7 @@ import re
 
 email = input("Email: ").strip()
 
-if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$",
+if re.search(r"^\w+@\w+\.edu$",
              email):  # the r at the beginning of the string means that the string is a raw string.
     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
     print("Valid email!")
@@ -137,3 +137,8 @@ else:
     print("Invalid email!")
 
 # the "\w" = [a-zA-Z0-9_], which means that the character is a special character that means match any word character.
+# the "\d" is a special character that means match any digit.
+# the "\D" is a special character that means match any non-digit.
+# the "\s" is a special character that means match any whitespace character.
+# the "\S" is a special character that means match any non-whitespace character.
+# the "W" is a not a word character.
