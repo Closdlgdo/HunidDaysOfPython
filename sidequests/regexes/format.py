@@ -22,8 +22,9 @@ import re
 name = input("Name: ").strip()
 matches = re.search(r"^(.+), (.+)$", name)  # we deliberately capture the dot plus for capturing purposes
 
-if matches:
-    last, first = matches.groups()
+if matches:  # we can be more explicit by getting specific groups back by doing this:
+    last = matches.group(1)  # before comma ^^^^^
+    first = matches.group(2)  # after comma ^^^^^
     name = f"{first} {last}"
 
 print(f"Hello, {name}!")
