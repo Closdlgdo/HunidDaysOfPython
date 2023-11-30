@@ -23,9 +23,10 @@ name = input("Name: ").strip()
 matches = re.search(r"^(.+), (.+)$", name)  # we deliberately capture the dot plus for capturing purposes
 
 if matches:  # we can be more explicit by getting specific groups back by doing this:
-    last = matches.group(1)  # before comma ^^^^^
-    first = matches.group(2)  # after comma ^^^^^
-    name = f"{first} {last}"
+    # last = matches.group(1)  # before comma ^^^^^
+    # first = matches.group(2)  # after comma ^^^^^
+    # We can refine this code a bit further by:
+    name = matches.group(2) + " " + matches.group(1)
 
 print(f"Hello, {name}!")
 
@@ -34,3 +35,4 @@ print(f"Hello, {name}!")
 # the "A|B" is a special character that means match either A or B.
 # the "(...)" is a special character that means match the expression inside the parentheses.
 # the "(?:...)" is a special character that means match the expression inside the parentheses but do not capture the match.
+# This code however does have some bugs that need fixing. For example: "Name: last,first" will be "Hello, last,first"
