@@ -12,7 +12,7 @@ from turtle import Turtle, Screen
 
 is_race_on = False
 screen = Screen()
-screen.setup(width=500, height=400)
+screen.setup(width=700, height=400)
 user_bet = screen.textinput(title="They call me Rabbit, This is a Turtle Race",
                             prompt="(Racers: luis, juan, pedro, pancho) Enter your choice: ")
 print(user_bet)
@@ -34,7 +34,7 @@ turtles["luis"].color("orange")
 start_y = -100
 for turtle_name, turtle in turtles.items():
     turtle.penup()
-    turtle.goto(x=-240, y=start_y)
+    turtle.goto(x=-330, y=start_y)
     start_y += 50  # Increase the separation along the y-axis
 
 if user_bet:
@@ -42,7 +42,7 @@ if user_bet:
 
 while is_race_on:
     for turtle_name, turtle in turtles.items():
-        if turtle.xcor() > 230:
+        if turtle.xcor() > 330:
             is_race_on = False
             winning_turtle_name = turtle_name
             if winning_turtle_name == user_bet:
