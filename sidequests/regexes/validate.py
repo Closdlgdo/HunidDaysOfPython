@@ -130,7 +130,7 @@ import re
 email = input("Email: ").strip()
 
 if re.search(r"^\w+@\w+\.(com|edu|gov|org|net)$",
-             email):  # the r at the beginning of the string means that the string is a raw string.
+             email, re.IGNORECASE):  # the r at the beginning of the string means that the string is a raw string.
     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
     print("Valid email!")
 else:
@@ -145,3 +145,7 @@ else:
 # the "A|B" is a special character that means match either A or B.
 # the "(...)" is a special character that means match the expression inside the parentheses.
 # the "(?:...)" is a special character that means match the expression inside the parentheses but do not capture the match.
+# the re.IGNORECASE is a special character that means to ignore case.
+# the re.MULTILINE is a special character that means to match multiple lines.
+# the re.VERBOSE is a special character that means to use verbose mode.
+# the re.DOTALL is a special character that means to match all characters including newlines.
