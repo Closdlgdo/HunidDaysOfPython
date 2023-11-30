@@ -43,7 +43,7 @@
 import re
 
 name = input("Name: ").strip()
-matches = re.search(r"^(.+), ?(.+)$", name)  # the addition of the "?" will tolerate more whitespaces.
+matches = re.search(r"^(.+), *(.+)$", name)  # the addition of the "*" will tolerate more whitespaces.
 
 if matches:
     name = matches.group(2) + " " + matches.group(1)
@@ -51,3 +51,4 @@ if matches:
 print(f"Hello, {name}!")
 
 # the "?" is a special character that means match zero or one of the preceding characters.
+# the "*" is a special character that means match zero or more of the preceding characters.
