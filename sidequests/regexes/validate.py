@@ -155,6 +155,29 @@
 
 # ####################################################################################
 # ####################################################################################
+# import re
+#
+# email = input("Email: ").strip()
+#
+# if re.search(r"^\w+@(\w+\.)?\w+\.(com|edu|gov|org|net)$",
+#              email, re.IGNORECASE):  # the r at the beginning of the string means that the string is a raw string.
+#     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
+#     print("Valid email!")
+# else:
+#     print("Invalid email!")
+#
+# # the "." any character is considered except a newline.
+# # the "*" is a special character that means match zero or more of the preceding characters.
+# # the "+" is a special character that means match one or more repetitions of the preceding character.
+# # the "?" is a special character that means match zero or one of the preceding characters.
+# # the "{m}" is a special character that means match exactly m repetitions of the preceding character.
+# # the "{m,}" is a special character that means match m or more repetitions of the preceding character.
+# # the "{m,n}" is a special character that means match from m to n repetitions of the preceding character.
+# # The program is getting great but there is still another problem. The program does not allow the user to have
+# # "." in their username. Ex: "hello.world@school.edu"
+
+# ####################################################################################
+# ####################################################################################
 import re
 
 email = input("Email: ").strip()
@@ -173,5 +196,13 @@ else:
 # the "{m}" is a special character that means match exactly m repetitions of the preceding character.
 # the "{m,}" is a special character that means match m or more repetitions of the preceding character.
 # the "{m,n}" is a special character that means match from m to n repetitions of the preceding character.
-# The program is getting great but there is still another problem. The program does not allow the user to have
-# "." in their username. Ex: "hello.world@school.edu"
+
+# This is the valid email expression that browser use to validate email:
+# ^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~+-]@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$
+# Thankfully someone created a library that helps with input validation of emails.
+
+# ####################################################################################
+# ####################################################################################
+
+# re.match is a function that returns a match object if there is a match. We don't have to specify with the ^ symbol.
+# re.fullmatch is a function that returns a match object if there is a match. We don't have to specify with the ^ or $ symbols.
