@@ -149,3 +149,6 @@ else:
 # the re.MULTILINE is a special character that means to match multiple lines.
 # the re.VERBOSE is a special character that means to use verbose mode.
 # the re.DOTALL is a special character that means to match all characters including newlines.
+
+# This code is great but still buggy, it does not allow for an email to have two sub domains after the @. In case
+# the user wanted to use a work email or school email. Ex: "hello@university.go.edu"
