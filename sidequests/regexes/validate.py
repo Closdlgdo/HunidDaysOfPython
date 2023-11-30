@@ -173,3 +173,5 @@ else:
 # the "{m}" is a special character that means match exactly m repetitions of the preceding character.
 # the "{m,}" is a special character that means match m or more repetitions of the preceding character.
 # the "{m,n}" is a special character that means match from m to n repetitions of the preceding character.
+# The program is getting great but there is still another problem. The program does not allow the user to have
+# "." in their username. Ex: "hello.world@school.edu"
