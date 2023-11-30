@@ -124,31 +124,52 @@
 
 # ####################################################################################
 # ####################################################################################
+#
+# import re
+#
+# email = input("Email: ").strip()
+#
+# if re.search(r"^\w+@\w+\.(com|edu|gov|org|net)$",
+#              email, re.IGNORECASE):  # the r at the beginning of the string means that the string is a raw string.
+#     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
+#     print("Valid email!")
+# else:
+#     print("Invalid email!")
+#
+# # the "\w" = [a-zA-Z0-9_], which means that the character is a special character that means match any word character.
+# # the "\d" is a special character that means match any digit.
+# # the "\D" is a special character that means match any non-digit.
+# # the "\s" is a special character that means match any whitespace character.
+# # the "\S" is a special character that means match any non-whitespace character.
+# # the "W" is a not a word character.
+# # the "A|B" is a special character that means match either A or B.
+# # the "(...)" is a special character that means match the expression inside the parentheses.
+# # the "(?:...)" is a special character that means match the expression inside the parentheses but do not capture the match.
+# # the re.IGNORECASE is a special character that means to ignore case.
+# # the re.MULTILINE is a special character that means to match multiple lines.
+# # the re.VERBOSE is a special character that means to use verbose mode.
+# # the re.DOTALL is a special character that means to match all characters including newlines.
+#
+# # This code is great but still buggy, it does not allow for an email to have two sub domains after the @. In case
+# # the user wanted to use a work email or school email. Ex: "hello@university.go.edu"
 
+# ####################################################################################
+# ####################################################################################
 import re
 
 email = input("Email: ").strip()
 
-if re.search(r"^\w+@\w+\.(com|edu|gov|org|net)$",
+if re.search(r"^\w+@(\w+\.)?\w+\.(com|edu|gov|org|net)$",
              email, re.IGNORECASE):  # the r at the beginning of the string means that the string is a raw string.
     # we can also use r"..." to tell python not to interpret the backslash as a escape character.
     print("Valid email!")
 else:
     print("Invalid email!")
 
-# the "\w" = [a-zA-Z0-9_], which means that the character is a special character that means match any word character.
-# the "\d" is a special character that means match any digit.
-# the "\D" is a special character that means match any non-digit.
-# the "\s" is a special character that means match any whitespace character.
-# the "\S" is a special character that means match any non-whitespace character.
-# the "W" is a not a word character.
-# the "A|B" is a special character that means match either A or B.
-# the "(...)" is a special character that means match the expression inside the parentheses.
-# the "(?:...)" is a special character that means match the expression inside the parentheses but do not capture the match.
-# the re.IGNORECASE is a special character that means to ignore case.
-# the re.MULTILINE is a special character that means to match multiple lines.
-# the re.VERBOSE is a special character that means to use verbose mode.
-# the re.DOTALL is a special character that means to match all characters including newlines.
-
-# This code is great but still buggy, it does not allow for an email to have two sub domains after the @. In case
-# the user wanted to use a work email or school email. Ex: "hello@university.go.edu"
+# the "." any character is considered except a newline.
+# the "*" is a special character that means match zero or more of the preceding characters.
+# the "+" is a special character that means match one or more repetitions of the preceding character.
+# the "?" is a special character that means match zero or one of the preceding characters.
+# the "{m}" is a special character that means match exactly m repetitions of the preceding character.
+# the "{m,}" is a special character that means match m or more repetitions of the preceding character.
+# the "{m,n}" is a special character that means match from m to n repetitions of the preceding character.
