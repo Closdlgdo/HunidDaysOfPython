@@ -16,41 +16,39 @@ screen.setup(width=500, height=400)
 user_bet = screen.textinput(title="They call me Rabbit, This is a Turtle Race",
                             prompt="(Racers: luis, juan, pedro, pancho) Enter your choice: ")
 print(user_bet)
-turtle_racers = {"luis": "orange", "juan": "red", "pedro": "green", "pancho": "blue"}
 
-pancho = Turtle(shape="turtle")
-pancho.penup()
-pancho.color("blue")
-pancho.goto(x=-240, y=-100)
+turtles = {
+    "pancho": Turtle(shape="turtle"),
+    "pedro": Turtle(shape="turtle"),
+    "juan": Turtle(shape="turtle"),
+    "luis": Turtle(shape="turtle")
+}
 
-pedro = Turtle(shape="turtle")
-pedro.penup()
-pedro.color("green")
-pedro.goto(x=-240, y=-25)
+# Set colors using the Turtle.color() method
+turtles["pancho"].color("blue")
+turtles["pedro"].color("green")
+turtles["juan"].color("red")
+turtles["luis"].color("orange")
 
-juan = Turtle(shape="turtle")
-juan.penup()
-juan.color("red")
-juan.goto(x=-240, y=50)
-
-luis = Turtle(shape="turtle")
-luis.penup()
-luis.color("orange")
-luis.goto(x=-240, y=125)
+# Adjust the y-coordinates of each turtle
+start_y = -100
+for turtle_name, turtle in turtles.items():
+    turtle.penup()
+    turtle.goto(x=-240, y=start_y)
+    start_y += 50  # Increase the separation along the y-axis
 
 if user_bet:
     is_race_on = True
 
 while is_race_on:
-
-    for turtle in (pancho, pedro, juan, luis):
+    for turtle_name, turtle in turtles.items():
         if turtle.xcor() > 230:
             is_race_on = False
-            winning_turtle = turtle_racers
-            if winning_turtle == user_bet:
-                print(f"You've won! The {winning_turtle} turtle is the winner!")
+            winning_turtle_name = turtle_name
+            if winning_turtle_name == user_bet:
+                print(f"You've won! {winning_turtle_name} is the winner!")
             else:
-                print(f"You've lost! The {winning_turtle} turtle is the winner!")
+                print(f"You've lost! {winning_turtle_name} is the winner!")
 
         rand_distance = random.randint(0, 10)
         turtle.forward(rand_distance)
