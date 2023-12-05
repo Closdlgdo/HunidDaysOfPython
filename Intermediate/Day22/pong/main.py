@@ -5,7 +5,7 @@ from paddles import Paddle
 from scoreboard import Scoreboard
 
 screen = Screen()
-screen.bgcolor("black")
+screen.bgcolor("blue")
 screen.setup(width=800, height=600)
 screen.title("Pong")
 screen.tracer(0)
