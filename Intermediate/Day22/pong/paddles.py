@@ -1,21 +1,20 @@
-# This is the paddle class
-class Paddle:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.paddle = Turtle()
-        self.paddle.shape("square")
-        self.paddle.color("white")
-        self.paddle.shapesize(stretch_wid=5, stretch_len=1)
-        self.paddle.penup()
-        self.paddle.goto(x, y)
+from turtle import Turtle
 
-    def move_up(self):
-        y = self.paddle.ycor()
-        y += 20
-        self.paddle.sety(y)
 
-    def move_down(self):
-        y = self.paddle.ycor()
-        y -= 20
-        self.paddle.sety(y)
+class Paddle(Turtle):
+
+    def __init__(self, position):
+        super().__init__()
+        self.shape("square")
+        self.color("white")
+        self.shapesize(stretch_wid=5, stretch_len=1)
+        self.penup()
+        self.goto(position)
+
+    def go_up(self):
+        new_y = self.ycor() + 40
+        self.goto(self.xcor(), new_y)
+
+    def go_down(self):
+        new_y = self.ycor() - 40
+        self.goto(self.xcor(), new_y)

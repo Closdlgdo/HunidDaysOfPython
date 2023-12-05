@@ -1,5 +1,3 @@
-# We are creating the pong scoreboard
-
 from turtle import Turtle
 
 
