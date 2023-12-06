@@ -1,21 +1,16 @@
+from turtle import Turtle
+
 FONT = ("Courier", 24, "normal")
 
 
-class Scoreboard:
+class Scoreboard(Turtle):
 
     def __init__(self):
+        super().__init__()
         self.level = 1
         self.hideturtle()
         self.penup()
         self.goto(-280, 250)
-        self.update_scoreboard()
-
-    def reset(self):
-        self.level = 1
-        self.update_scoreboard()
-
-    def increase_score(self):
-        self.level += 1
         self.update_scoreboard()
 
     def update_scoreboard(self):
