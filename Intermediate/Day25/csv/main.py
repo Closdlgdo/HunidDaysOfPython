@@ -17,11 +17,19 @@ data_dict = data.to_dict()
 print(data_dict)
 
 temp_list = data["temp"].to_list()
-# let's find the average temperature
-print(sum(temp_list) / len(temp_list))
+# # let's find the average temperature
+# print(sum(temp_list) / len(temp_list))
+#
+# # This too will find the average temperature using a standard panda method
+# print(data["temp"].mean())
+#
+# # This will find the max temperature
+# print(data["temp"].max())
 
-# This too will find the average temperature using a standard panda method
-print(data["temp"].mean())
+# Get data in columns
+print(data["condition"])
+print(data.condition)
 
-# This will find the max temperature
-print(data["temp"].max())
+# Get data in row
+print(data[data.day == "Monday"])
+print(data[data.temp == data.temp.max()])
