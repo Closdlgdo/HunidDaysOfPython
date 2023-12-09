@@ -22,3 +22,6 @@ print(sum(temp_list) / len(temp_list))
 
 # This too will find the average temperature using a standard panda method
 print(data["temp"].mean())
+
+# This will find the max temperature
+print(data["temp"].max())
