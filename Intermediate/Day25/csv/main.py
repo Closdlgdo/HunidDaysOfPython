@@ -40,3 +40,12 @@ monday = data[data.day == "Monday"]
 monday_temp = int(monday.temp)
 monday_temp_fahrenheit = monday_temp * 1.8 + 32
 print(monday_temp_fahrenheit)
+
+# Create a dataframe from scratch
+data_diction = {
+    "students": ["Amy", "James", "Angela"],
+    "scores": [76, 56, 65]
+}
+
+data = pd.DataFrame(data_diction)
+data.to_csv("new_data.csv")
