@@ -36,7 +36,7 @@ temp_list = data["temp"].to_list()
 monday = data[data.day == "Monday"]
 # print(monday.condition)
 
-# Let's find the temp for monday and convert it to fahrenheit
+# Let's find the temp for monday and convert it to Fahrenheit
 monday_temp = int(monday.temp)
 monday_temp_fahrenheit = monday_temp * 1.8 + 32
 print(monday_temp_fahrenheit)
