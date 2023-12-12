@@ -27,3 +27,8 @@
 name = "Carlos"
 new_list = [letter for letter in name]
 print(new_list)
+
+# Exercise 2:
+# range(1, 5) # [1, 2, 3, 4] * 2
+new_range = [num * 2 for num in range(1, 5)]
+print(new_range)
