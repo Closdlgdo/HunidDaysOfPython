@@ -22,3 +22,8 @@
 # With list comprehensions:
 # new_list = [n + 1 for n in numbers]
 # print(new_list)
+
+# Exercise:
+name = "Carlos"
+new_list = [letter for letter in name]
+print(new_list)
