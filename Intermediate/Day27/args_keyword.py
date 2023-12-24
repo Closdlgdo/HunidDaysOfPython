@@ -7,9 +7,18 @@
 
 # Unlimited arguments.
 # You dont have to use the word args but you do need the asterisk.
+# def add(*args):
+#     for n in args:
+#         print(n)
+#
+#
+# add(1, 2, 3, 4, 5)
+
 def add(*args):
+    total = 0
     for n in args:
-        print(n)
+        total += n
+    return total
 
 
-add(1, 2, 3, 4, 5)
+print(add(1, 2, 3, 4, 234, 23, 55, 7))
