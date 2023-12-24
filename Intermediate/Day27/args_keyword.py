@@ -5,7 +5,7 @@
 # add(n1=5, n2=3)
 # This only allows you to pass two arguments.
 
-# Unlimited arguments.
+# Unlimited Positional arguments.
 # You dont have to use the word args but you do need the asterisk.
 # def add(*args):
 #     for n in args:
@@ -15,6 +15,8 @@
 # add(1, 2, 3, 4, 5)
 
 def add(*args):
+    print(args[6])
+
     total = 0
     for n in args:
         total += n
