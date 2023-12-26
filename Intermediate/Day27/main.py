@@ -8,8 +8,13 @@ window.minsize(width=500, height=300)
 my_label = Label(text="I am a label", font=("times new roman", 24))
 my_label.pack()  # pack is used to show the label on the screen instead of the console and center it.
 
+
 # buttons
-button = Button(text="Click me")
+def button_clicked():
+    print("I got clicked")
+
+
+button = Button(text="Click me", command=button_clicked)
 button.pack()
 
 
