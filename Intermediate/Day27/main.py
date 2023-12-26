@@ -12,17 +12,16 @@ my_label.pack()  # pack is used to show the label on the screen instead of the c
 # buttons
 def button_clicked():
     print("I got clicked")
-    my_label.config(text="I got clicked")
+    new_text = inputter.get()
+    my_label.config(text=new_text)
 
 
 button = Button(text="Click me", command=button_clicked)
 button.pack()
 
-
-
-
-
-
+# Entry/Input
+inputter = Entry(width=10)  # width is used to set the width of the entry in the parent
+inputter.pack()
 
 
 
