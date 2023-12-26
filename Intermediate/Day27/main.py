@@ -12,6 +12,7 @@ my_label.pack()  # pack is used to show the label on the screen instead of the c
 # buttons
 def button_clicked():
     print("I got clicked")
+    my_label.config(text="I got clicked")
 
 
 button = Button(text="Click me", command=button_clicked)
