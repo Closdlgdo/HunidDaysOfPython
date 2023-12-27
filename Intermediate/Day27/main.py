@@ -23,9 +23,13 @@ button = Button(text="Click me", command=button_clicked)
 # button.pack()
 button.grid(column=1, row=1)
 
+new_button = Button(text="New button")
+# new_button.pack()
+new_button.grid(column=2, row=0)
+
 # Entry/Input
 inputter = Entry(width=10)  # width is used to set the width of the entry in the parent
 # inputter.pack()
-inputter.grid(column=2, row=2)  # grid is used to show the entry on the screen. You cannot use pack with grid.
+inputter.grid(column=3, row=3)  # grid is used to show the entry on the screen. You cannot use pack with grid.
 
 window.mainloop()  # main loop is used to keep the window open
