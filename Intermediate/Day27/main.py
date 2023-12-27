@@ -6,7 +6,10 @@ window.minsize(width=500, height=300)
 
 # Create a label
 my_label = Label(text="I am a label", font=("times new roman", 24))
-my_label.pack()  # pack is used to show the label on the screen instead of the console and center it.
+# my_label.pack()  # pack is used to show the label on the screen instead of the console and center it.
+# my_label.place(x=210, y=110)  # place is used to show the label on the screen instead of the console. Downside is that
+# it is too specific and we need to figure out the x and y coordinates.
+my_label.grid(column=0, row=0)
 
 
 # buttons
@@ -17,13 +20,12 @@ def button_clicked():
 
 
 button = Button(text="Click me", command=button_clicked)
-button.pack()
+# button.pack()
+button.grid(column=1, row=1)
 
 # Entry/Input
 inputter = Entry(width=10)  # width is used to set the width of the entry in the parent
-inputter.pack()
-
-
-
+# inputter.pack()
+inputter.grid(column=2, row=2)  # grid is used to show the entry on the screen. You cannot use pack with grid.
 
 window.mainloop()  # main loop is used to keep the window open
