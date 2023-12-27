@@ -3,7 +3,7 @@ from tkinter import *
 window = Tk()
 window.title("Carlos' GUI")
 window.minsize(width=500, height=300)
-window.config(padx=100, pady=200)
+window.config(padx=100, pady=200)  # padx and pady are used to set the padding of the window
 
 # Create a label
 my_label = Label(text="I am a label", font=("times new roman", 24))
