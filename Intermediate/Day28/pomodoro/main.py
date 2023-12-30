@@ -12,23 +12,39 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
 timer = None
+timer_running = False  # Declare timer_running as a global variable
 
 
 # ---------------------------- TIMER RESET ------------------------------- #
 
 def reset_timer():
-    window.after_cancel(timer)
+    global reps, timer_running
+
+    # If the timer is running, cancel it
+    if timer_running:
+        window.after_cancel(timer)
+        timer_running = False  # Set the timer_running flag to False
+
+    # Reset the timer display
     canvas.itemconfig(timer_text, text="00:00")
-    title_label.config(text="Timer")
+
+    # Reset the title label and check marks
+    title_label.config(text="Timer", fg=GREEN)
     check_marks.config(text="")
-    global reps
+
+    # Reset reps to 0
     reps = 0
 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
 def start_timer():
-    global reps
+    global reps, timer_running
+
+    # If the timer is already running, do nothing
+    if timer_running:
+        return
+
     reps += 1
     print(f"Start Timer - Reps: {reps}")
 
@@ -45,6 +61,13 @@ def start_timer():
     else:
         count_down(work_sec)
         title_label.config(text="Work", fg=GREEN)
+
+    # If a full cycle is completed, reset reps
+    if reps > 8:
+        reps = 0
+
+    # Set the timer_running flag to True
+    timer_running = True
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
