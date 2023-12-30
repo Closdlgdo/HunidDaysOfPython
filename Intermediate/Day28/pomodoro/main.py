@@ -30,6 +30,7 @@ def reset_timer():
 def start_timer():
     global reps
     reps += 1
+    print(f"Start Timer - Reps: {reps}")
 
     work_sec = WORK_MIN * 60
     short_break_sec = SHORT_BREAK_MIN * 60
@@ -48,6 +49,8 @@ def start_timer():
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
+    global timer
+    print(f"Count Down - Count: {count}")
     count_min = math.floor(count / 60)
     count_sec = count % 60
     if count_sec < 10:
@@ -55,7 +58,6 @@ def count_down(count):
 
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
-        global timer
         timer = window.after(1000, count_down, count - 1)
     else:
         start_timer()
