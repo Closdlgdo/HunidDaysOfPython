@@ -3,6 +3,9 @@ from tkinter import *
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+with open("data.txt", mode="a") as data_file:
+    data_file.write(f"{website} | {email} | {password}\n")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
