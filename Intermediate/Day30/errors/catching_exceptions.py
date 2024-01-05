@@ -17,3 +17,6 @@ except KeyError as error_message:
 else:
     content = file.read()
     print(content)
+finally:
+    file.close()
+    print("File was closed.")
