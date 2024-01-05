@@ -5,6 +5,6 @@
 # finally: do this no matter what
 try:
     file = open("a_file.txt")
-except:
+except:  # if we use the except operator, it will ignore all errors.
     file = open("a_file.txt", "w")
     file.write("Something")
