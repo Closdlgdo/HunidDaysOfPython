@@ -14,3 +14,6 @@ except FileNotFoundError:  # if we use the except operator, it will ignore all e
     file.write("Something")
 except KeyError as error_message:
     print(f"The key {error_message} not exist.")
+else:
+    content = file.read()
+    print(content)
