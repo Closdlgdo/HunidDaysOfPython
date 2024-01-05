@@ -12,5 +12,5 @@ except FileNotFoundError:  # if we use the except operator, it will ignore all e
     # but not the correct error. KeyError: 'asdfasdf'
     file = open("a_file.txt", "w")
     file.write("Something")
-except KeyError:
-    print("The key does not exist.")
+except KeyError as error_message:
+    print(f"The key {error_message} not exist.")
