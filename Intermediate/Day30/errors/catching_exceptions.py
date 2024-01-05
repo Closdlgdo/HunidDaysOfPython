@@ -5,6 +5,8 @@
 # finally: do this no matter what
 try:
     file = open("a_file.txt")
+    a_dictionary = {"key": "value"}
+    print(a_dictionary["asdfasdf"])  # prints nothing, but it doesn't show an error because of the except operator.
 except:  # if we use the except operator, it will ignore all errors.
     file = open("a_file.txt", "w")
     file.write("Something")
