@@ -8,6 +8,9 @@ try:
     a_dictionary = {"key": "value"}
     print(a_dictionary["asdfasdf"])  # prints nothing, but it doesn't show an error because of the except operator.
 except FileNotFoundError:  # if we use the except operator, it will ignore all errors.
-    # FileNotFoundError: [Errno 2] No such file or directory: 'a_file.txt' prints out now, properly catching the error.
+    # FileNotFoundError: [Errno 2] No such file or directory: 'a_file.txt' prints out now, properly catching an error.
+    # but not the correct error. KeyError: 'asdfasdf'
     file = open("a_file.txt", "w")
     file.write("Something")
+except KeyError:
+    print("The key does not exist.")
