@@ -7,6 +7,7 @@ try:
     file = open("a_file.txt")
     a_dictionary = {"key": "value"}
     print(a_dictionary["asdfasdf"])  # prints nothing, but it doesn't show an error because of the except operator.
-except:  # if we use the except operator, it will ignore all errors.
+except FileNotFoundError:  # if we use the except operator, it will ignore all errors.
+    # FileNotFoundError: [Errno 2] No such file or directory: 'a_file.txt' prints out now, properly catching the error.
     file = open("a_file.txt", "w")
     file.write("Something")
