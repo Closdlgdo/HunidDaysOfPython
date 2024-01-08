@@ -13,4 +13,4 @@ else:
     content = file.read()
     print(content)
 finally:
-    raise KeyError
+    raise TypeError("This is an error that I made up.")
