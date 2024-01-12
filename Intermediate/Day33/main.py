@@ -6,4 +6,12 @@
 import requests
 
 response = requests.get(url="http://api.open-notify.org/iss-now.json")
-print(response.status_code)
+if response.status_code != 200:
+    raise Exception("Error: " + response.status_code)
+else:
+    data = response.json()
+    print(data)
+
+# The type of response returns depend on the number returned. For example:
+# 1xx -> Informational, 2xx -> Success, 3xx -> Redirection (you are not allowed in here),
+# 4xx (you screwed up somewhere)-> Client Error, 5xx -> Server Error (the server messed up, not you)
